@@ -74,9 +74,9 @@ export const Navbar: React.FC = () => {
   );
 };
 
-export const Section: React.FC<{ id: string; title: string; subtitle?: string; children: React.ReactNode; dark?: boolean }> = ({ id, title, subtitle, children, dark }) => {
+export const Section: React.FC<{ id: string; title: string; subtitle?: string; children: React.ReactNode; dark?: boolean; className?: string }> = ({ id, title, subtitle, children, dark, className = "" }) => {
   return (
-    <section id={id} className={`relative py-12 px-8 scroll-mt-20 ${dark ? 'bg-[#1a1a1a] text-white' : 'bg-white text-[#1a1a1a]'}`}>
+    <section id={id} className={`relative py-12 px-8 scroll-mt-20 ${dark ? 'bg-[#1a1a1a] text-white' : 'bg-white text-[#1a1a1a]'} ${className}`}>
       <div className="max-w-[1800px] mx-auto">
         <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between border-b border-current/10 pb-4">
           <div>

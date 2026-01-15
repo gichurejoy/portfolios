@@ -51,8 +51,8 @@ const App: React.FC = () => {
 
         <div className="relative z-10 w-full max-w-[1800px] mx-auto px-8 pb-8 lg:pb-12">
           <div className="max-w-4xl reveal-up">
-            <span className="text-xs font-mono uppercase tracking-[0.5em] mb-3 block opacity-60">Sarah Mukami Gichure • Real Estate</span>
-            <h1 className="text-5xl md:text-[7rem] font-serif leading-[0.85] tracking-tighter mb-4">
+            <span className="text-xs font-mono uppercase tracking-[0.5em] mb-3 block opacity-60 drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">Sarah Mukami Gichure • Real Estate</span>
+            <h1 className="text-5xl md:text-[7rem] font-serif leading-[0.85] tracking-tighter mb-4 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
               Property Value <br /><span className="italic ml-8 md:ml-16">Strategist.</span>
             </h1>
             <div className="flex flex-col md:flex-row md:items-center gap-6 mt-6">
@@ -88,12 +88,12 @@ const App: React.FC = () => {
 
       {/* Portfolio Gallery */}
       <Section id="works" title="Selected Works" subtitle="Professional Archive 2024-2025">
-        <div className="max-w-4xl mx-auto border border-slate-200 shadow-sm">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           {PROJECTS.map((project) => (
             <div 
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative bg-white aspect-[16/9] overflow-hidden cursor-pointer"
+              className="group relative bg-white aspect-[16/9] overflow-hidden cursor-pointer border border-slate-200 shadow-sm"
             >
               <img 
                 src={project.imageUrl} 
@@ -226,7 +226,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact" title="Connect" subtitle="Direct Line">
+      <Section id="contact" title="Connect" subtitle="Direct Line" className="py-6">
         <div className="grid lg:grid-cols-2 gap-10">
            <div className="space-y-6">
               <h3 className="text-4xl font-serif">Sarah Mukami <br />Gichure.</h3>
