@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -576,6 +576,24 @@ const ShopPage: React.FC = () => {
   );
 };
 
+const SuccessPage: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-cream text-neutral-900 flex flex-col items-center justify-center text-center px-6 pt-16">
+      <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-8 animate-in zoom-in duration-500">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+      </div>
+      <p className="text-xs uppercase tracking-[0.4em] text-emerald-600 font-black mb-4">Message Received</p>
+      <h1 className="text-4xl md:text-5xl font-bold font-playfair mb-6 text-neutral-900">Thank You!</h1>
+      <p className="max-w-md text-lg text-slate-600 mb-10 leading-relaxed">
+        I've received your message and will get back to you shortly. Usually within 24 hours during business days.
+      </p>
+      <Link to="/" className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-8 py-3.5 text-sm font-bold text-white hover:bg-slate-800 transition-all shadow-xl">
+        Return Home
+      </Link>
+    </div>
+  );
+};
+
 const ContactPage: React.FC = () => {
   useEffect(() => {
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
@@ -589,6 +607,7 @@ const ContactPage: React.FC = () => {
 
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const sendEmail = (e: React.FormEvent) => {
@@ -609,6 +628,7 @@ const ContactPage: React.FC = () => {
           setSubmitStatus('success');
           setIsSubmitting(false);
           form.current?.reset();
+          navigate('/success');
         }, (error) => {
           console.log(error.text);
           setSubmitStatus('error');
@@ -846,6 +866,7 @@ const App: React.FC = () => {
             <Route path="/work" element={<WorkPage />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/success" element={<SuccessPage />} />
           </Routes>
         </main>
         <Footer />
