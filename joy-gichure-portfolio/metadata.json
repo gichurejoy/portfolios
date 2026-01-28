@@ -1,0 +1,8 @@
+{
+  "name": "Joy Gichure Portfolio",
+  "description": "Full-stack developer creating high-converting portfolio websites and custom software solutions for job seekers and businesses.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
