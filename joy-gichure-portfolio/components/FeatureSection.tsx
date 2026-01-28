@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FeatureSection: React.FC = () => {
   return (
@@ -14,10 +15,10 @@ const FeatureSection: React.FC = () => {
           <p className="text-slate-600 text-lg leading-relaxed mb-8">
             I'm not just a designer—I'm a full-stack engineer with 3+ years building production systems. Your portfolio will be built with the same quality standards as enterprise applications.
           </p>
-          <a href="/work" className="inline-flex items-center gap-2 rounded-md border border-emerald-600 px-5 py-2.5 text-sm font-bold text-emerald-700 hover:bg-emerald-50 transition-colors">
+          <Link to="/work" className="inline-flex items-center gap-2 rounded-md border border-emerald-600 px-5 py-2.5 text-sm font-bold text-emerald-700 hover:bg-emerald-50 transition-colors">
             View Case Studies
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
+          </Link>
         </div>
         <div className="lg:col-span-5 order-1 lg:order-2">
           <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
@@ -47,10 +48,10 @@ const FeatureSection: React.FC = () => {
               As a developer, I know what recruiters and hiring managers look for. I'll showcase your projects in ways that demonstrate real technical competence and problem-solving skills.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="/contact" className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-6 py-3 text-sm font-bold text-white hover:bg-slate-800 transition-all">
+               <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-6 py-3 text-sm font-bold text-white hover:bg-slate-800 transition-all">
                 Schedule Consultation
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
